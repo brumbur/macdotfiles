@@ -25,8 +25,7 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 # antigen -> all plugins already configured in .zshrc-alex
 curl -L git.io/antigen > antigen.zsh
 
-# add command at the end of .zshrc to source all custom setings
-source ~/.zshrc-alex
+# source ~/.other
 
 # ssh
 ssh-add -K ~/.ssh/id_ed25519
