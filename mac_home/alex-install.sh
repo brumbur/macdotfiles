@@ -7,7 +7,9 @@ gem install colorls
 # patched nerd fonts
 # https://github.com/ryanoasis/nerd-fonts
 brew tap homebrew/cask-fonts
-brew install --cask font-hack-nerd-font
+brew install font-fira-code
+brew install font-Fira-Code-nerd-font
+brew install font-hack-nerd-font
 
 # hyper
 brew install --cask hyper
