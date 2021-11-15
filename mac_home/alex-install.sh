@@ -30,3 +30,7 @@ curl -L git.io/antigen > antigen.zsh
 # ssh
 ssh-add -K ~/.ssh/id_ed25519
 ssh-add -K ~/.ssh/id_rsa
+
+# misch
+brew install rectangle
+brew install BetterTouchTool
