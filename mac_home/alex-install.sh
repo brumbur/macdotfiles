@@ -34,3 +34,13 @@ ssh-add -K ~/.ssh/id_rsa
 # misch
 brew install rectangle
 brew install BetterTouchTool
+
+# create backup ~/Brewfile
+# brew bundle dump
+
+# restore from default backup
+# brew bundle
+
+# restore from specific file
+# brew bundle --file=~/Brewfile-20200531
+
