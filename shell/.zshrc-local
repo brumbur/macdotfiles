@@ -17,10 +17,10 @@ export ANDROID_HOME=~/Library/Android/sdk
 export NVM_DIR="$HOME/.nvm"
 
 # Start ssh-agent (https://linux.die.net/man/1/ssh-agent)
-eval `ssh-agent -k`
+eval `ssh-agent -k &> /dev/null` 
 
 # Add keys from ~/.ssh (.ssh directory permissions should be 700, pub keys 644, private keys 600)
-ssh-add  --apple-use-keychain --apple-load-keychain 
+ssh-add  --apple-use-keychain --apple-load-keychain &> /dev/null 
 
 #------------------
 # PATH Manipulations
@@ -53,7 +53,6 @@ antigen bundle command-not-found
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
-
 antigen bundle zsh-users/zsh-autosuggestions
 
 # Allow the use of the z plugin to easily navigate directories
@@ -61,8 +60,9 @@ antigen bundle agkozak/zsh-z
 
 # Load the theme.
 # antigen theme robbyrussell
-antigen theme agnoster
+# antigen theme agnoster
 # antigen theme spaceship-prompt/spaceship-prompt
+antigen theme romkatv/powerlevel10k
 
 # Apply all plugin settings
 antigen apply

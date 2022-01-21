@@ -19,6 +19,8 @@ curl -L git.io/antigen > antigen.zsh
 # colorls (to show file icons, etc.) or just use exa
 gem install colorls
 
+# close the ssh-agent on shell exit >> todo: verify it works
+echo "trap 'test -n \"$SSH_AUTH_SOCK\" && eval `/usr/bin/ssh-agent -k`' 0" >> ~/.zprofile
 
 # ssh keys
 # git config
