@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 SCRIPT_DIR=${0:A:h}
 
 # either automatically install plugins and fonts or just use the templated .hyper.js
@@ -12,4 +12,5 @@ SCRIPT_DIR=${0:A:h}
 # sed...fontFamily: '"FiraCode Nerd Font", Consolas, "Lucida Console", monospace',
 
 [[ -f ~/.hyper.js ]] && mv ~/.hyper.js ~/.hyper.js.bak
+[[ -L ~/.hyper.js ]] && rm -f ~/.hyper.js
 ln -s "$SCRIPT_DIR/.hyper.js" ~/.hyper.js
