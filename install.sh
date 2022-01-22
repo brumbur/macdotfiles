@@ -48,8 +48,9 @@ fi
 echo 'trap ''test -n \"$SSH_AUTH_SOCK\" && eval `/usr/bin/ssh-agent -k`'' 0' >> ~/.zprofile
 
 # source custom vars and paths
-if [[ -f "$SCRIPT_DIR/shell/.zshrc-local" ]]; then
-	ln -s "$SCRIPT_DIR/shell/.zshrc-local" ~/.zshrc-local
+if [[ -f "$SCRIPT_DIR/shell/.zprofile-local" ]]; then
+	rm -f /.zprofile-local
+	ln -s "$SCRIPT_DIR/shell/.zprofile-local" ~/.zprofile-local
 	echo "source ~/.zprofile-local" >> ~/.zprofile
 fi
 
