@@ -61,8 +61,10 @@ fi
 
 # antigen
 curl -L git.io/antigen > antigen.zsh
+
 # all antigen plugins already configured in .zshrc-local
-ln -s $SCRIPT_DIR/.zshrc-local ~/.zshrc-local
+if [[ -f "$SCRIPT_DIR/.zshrc-local" ]]; then
+rm -f /.zshrc-local && ln -s $SCRIPT_DIR/.zshrc-local ~/.zshrc-local
 echo "source ~/.zshrc-local" >> ~/.zshrc
 
 # hyper
