@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 # ssh config docs: https://man.openbsd.org/ssh_config.5
 # check also /etc/ssh/ssh_config
 

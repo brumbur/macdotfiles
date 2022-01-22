@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 SCRIPT_DIR=${0:A:h}
 
 ARCH_AMD64="i386"
