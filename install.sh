@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+SCRIPT_DIR=${0:A:h}
 
 ARCH_AMD64="i386"
 ARCH_ARM64="arm"
@@ -48,12 +48,7 @@ fi
 echo 'trap ''test -n \"$SSH_AUTH_SOCK\" && eval `/usr/bin/ssh-agent -k`'' 0' >> ~/.zprofile
 
 # source custom vars and paths
-if [[ -f "$SCRIPT_DIR/shell/.zprofile-local" ]]; then
-	rm -f /.zprofile-local
-	ln -s "$SCRIPT_DIR/shell/.zprofile-local" ~/.zprofile-local
-	echo "source ~/.zprofile-local" >> ~/.zprofile
-fi
-
+[[ -f "$SCRIPT_DIR/shell/.zprofile-local" ]] && echo "source $SCRIPT_DIR/shell/.zprofile-local" >> ~/.zprofile
 
 # --------------------
 # custom shell options
@@ -63,9 +58,7 @@ fi
 curl -L git.io/antigen > antigen.zsh
 
 # all antigen plugins already configured in .zshrc-local
-if [[ -f "$SCRIPT_DIR/.zshrc-local" ]]; then
-rm -f /.zshrc-local && ln -s $SCRIPT_DIR/.zshrc-local ~/.zshrc-local
-echo "source ~/.zshrc-local" >> ~/.zshrc
+[[ -f "$SCRIPT_DIR/.zshrc-local" ]] && echo "source $SCRIPT_DIR/shell/.zshrc-local" >> ~/.zshrc
 
 # hyper
 $SCRIPT_DIR/hyper/install.sh

@@ -2,7 +2,7 @@
 # Aliases (for a full list of aliases, run `alias`). 
 # Note: the following aliases overwrite any aliases specified in the Oh My Zsh plugins
 #------------------
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+SCRIPT_DIR=${0:A:h}
 
 # Open .zshrc to be editor in VS Code
 alias change="code ~/.zshrc"
