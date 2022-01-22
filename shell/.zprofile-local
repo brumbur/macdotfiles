@@ -26,3 +26,6 @@ export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="/usr/local/lib/ruby/gems/2.5.0/bin:$PATH"
 export JAVA_HOME="/usr/bin/java"
+
+# close the ssh-agent on shell exit >> todo: verify it works
+# echo 'trap ''test -n \"$SSH_AUTH_SOCK\" && eval `/usr/bin/ssh-agent -k`'' 0' >> ~/.zprofile

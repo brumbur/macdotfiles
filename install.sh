@@ -39,26 +39,17 @@ if [[ ! -d "/Applications/Docker.app" ]]; then
 	hdiutil unmount /Volumes/Docker
 fi
 
-
-# -----------------------
-# zprofile customizations
-# -----------------------
-
-# close the ssh-agent on shell exit >> todo: verify it works
-echo 'trap ''test -n \"$SSH_AUTH_SOCK\" && eval `/usr/bin/ssh-agent -k`'' 0' >> ~/.zprofile
-
-# source custom vars and paths
-[[ -f "$SCRIPT_DIR/shell/.zprofile-local" ]] && echo "source $SCRIPT_DIR/shell/.zprofile-local" >> ~/.zprofile
-
 # --------------------
 # custom shell options
 # --------------------
+# source custom vars and paths
+[[ -f "$SCRIPT_DIR/shell/.zprofile-local" ]] && echo "source $SCRIPT_DIR/shell/.zprofile-local" >> ~/.zprofile
 
 # antigen
 curl -L git.io/antigen > antigen.zsh
 
 # all antigen plugins already configured in .zshrc-local
-[[ -f "$SCRIPT_DIR/.zshrc-local" ]] && echo "source $SCRIPT_DIR/shell/.zshrc-local" >> ~/.zshrc
+[[ -f "$SCRIPT_DIR/shell/.zshrc-local" ]] && echo "source $SCRIPT_DIR/shell/.zshrc-local" >> ~/.zshrc
 
 # hyper
 $SCRIPT_DIR/hyper/install.sh
