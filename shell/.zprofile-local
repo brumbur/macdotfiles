@@ -1,0 +1,28 @@
+#------------------
+# Shell Variables
+#------------------
+# Specify VS Code as default editor for the React Native Simulator
+export REACT_EDITOR=code
+
+# Set VS Code Insiders as default code editor
+export EDITOR=code
+
+# Android SDK
+export ANDROID_HOME=~/Library/Android/sdk
+
+# NVM directory variable
+export NVM_DIR="$HOME/.nvm"
+
+#-------------------
+# PATH Manipulations
+#-------------------
+# Add mySQL executable to Path
+export PATH=$PATH:/usr/local/mysql/bin
+# Add Laravel Valet to PATH
+export PATH=${PATH}:$HOME/.composer/vendor/bin
+# Add Android SDK to path
+export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
+# Add ruby to PATH
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/lib/ruby/gems/2.5.0/bin:$PATH"
+export JAVA_HOME="/usr/bin/java"
