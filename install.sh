@@ -58,7 +58,7 @@ if [[ -f "$SCRIPT_DIR/shell/.zprofile-local" ]]  && ! grep -q "zprofile-local" "
 fi
 	
 # hyper
-rm -f ~/.hyper.js && ln -s "$SCRIPT_DIR/.hyper.js" ~/.hyper.js
+rm -f ~/.hyper.js && ln -s "$SCRIPT_DIR/hyper/.hyper.js" ~/.hyper.js
 
 # brew - optional packages
 [[ -f "$SCRIPT_DIR/Brewfile.optional" ]] && brew bundle --file=~"$SCRIPT_DIR/Brewfile.optional"
