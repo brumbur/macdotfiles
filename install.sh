@@ -41,9 +41,10 @@ if [[ ! -d "/Applications/Docker.app" ]]; then
 	hdiutil unmount /Volumes/Docker
 fi
 
-# --------------------
-# custom shell options
-# --------------------
+
+# ------------------------------------
+# shell options - hyper, antigen, etc.
+# ------------------------------------
 # antigen
 curl -L git.io/antigen > antigen.zsh
 
@@ -62,8 +63,6 @@ rm -f ~/.hyper.js && ln -s "$SCRIPT_DIR/hyper/.hyper.js" ~/.hyper.js
 
 # brew - optional packages
 [[ -f "$SCRIPT_DIR/Brewfile.optional" ]] && brew bundle --file=~"$SCRIPT_DIR/Brewfile.optional"
-
-
 
 # colorls @update: no longer needed, using exa
 # gem install colorls
