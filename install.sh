@@ -67,9 +67,13 @@ rm -f ~/.hyper.js && ln -s "$SCRIPT_DIR/hyper/.hyper.js" ~/.hyper.js
 # colorls @update: no longer needed, using exa
 # gem install colorls
 
+# key-bindings
+$SCRIPT_DIR/macos/install.sh
+
 # ssh
 # $SCRIPT_DIR/.ssh/install.sh
 
 # git config
 # pip config
 # aws config
+

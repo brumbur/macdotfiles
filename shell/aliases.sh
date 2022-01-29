@@ -5,6 +5,8 @@ SCRIPT_DIR=${0:A:h}
 
 # list various configs
 alias shconfig='brew list && antigen list && hyper list && p10k help'
+# ssh config
+alias sshconfig="subl ~/.ssh/config"
 # Open .zshrc to be editor in VS Code
 alias zshcfg="code ~/.zshrc"
 # Re-run source command on .zshrc to update current terminal session with new settings

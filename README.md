@@ -1,5 +1,5 @@
 # ds-dotfiles
 
 ```bash
-git clone https://github.com/brumbur/macdotfiles.git ~/.macdotfiles && source ~/.macdotfiles/install.sh
+git clone https://github.com/brumbur/macdotfiles.git ~/.dotfiles && source ~/.dotfiles/install.sh
 ```
