@@ -1,9 +1,12 @@
+SCRIPT_DIR=${0:A:h}
+set -o magicequalsubst && USER_HOME=~
+
 #------------------
 # Shell Variables
 #------------------
 
 # OpenSSH
-$ export PATH=$(brew --prefix openssh)/bin:$PATH
+export PATH=$(brew --prefix openssh)/bin:$PATH
 
 # Specify VS Code as default editor for the React Native Simulator
 export REACT_EDITOR=code
@@ -17,19 +20,20 @@ export ANDROID_HOME=~/Library/Android/sdk
 # NVM directory variable
 export NVM_DIR="$HOME/.nvm"
 
-#-------------------
-# PATH Manipulations
-#-------------------
-# Add mySQL executable to Path
-export PATH=$PATH:/usr/local/mysql/bin
-# Add Laravel Valet to PATH
-export PATH=${PATH}:$HOME/.composer/vendor/bin
-# Add Android SDK to path
-export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
-# Add ruby to PATH
+# Ruby
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="/usr/local/lib/ruby/gems/2.5.0/bin:$PATH"
+
+# Java
 export JAVA_HOME="/usr/bin/java"
 
+#-------------------
+# SSH Agent and Keys
+#-------------------
+# kill the osx agent process before starting the openssh agent
+kill $(pgrep -u $USER ssh-agent) &> /dev/null
+eval `$(brew --prefix openssh)/bin/ssh-agent` &> /dev/null
+ssh-add ~/.ssh/id_* &> /dev/null
+
 # close the ssh-agent on shell exit >> todo: verify it works
-# echo 'trap ''test -n \"$SSH_AUTH_SOCK\" && eval `/usr/bin/ssh-agent -k`'' 0' >> ~/.zprofile
+# echo 'trap ''test -n \"$SSH_AUTH_SOCK\" && eval `$(brew --prefix openssh)/bin/ssh-agent -k`'' 0' >> ~/.zprofile

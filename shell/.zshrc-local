@@ -1,14 +1,6 @@
 # contains instance specific shell customizations
 SCRIPT_DIR=${0:A:h}
-
-#-------------------
-# SSH Agent and Keys
-#-------------------
-# Start ssh-agent (https://linux.die.net/man/1/ssh-agent)
-eval `ssh-agent -k &> /dev/null` 
-
-# Add keys from ~/.ssh (.ssh directory permissions should be 700, pub keys 644, private keys 600)
-ssh-add  --apple-use-keychain --apple-load-keychain &> /dev/null 
+set -o magicequalsubst && USER_HOME=~
 
 #------------------
 # antigen config
@@ -68,5 +60,3 @@ add-zsh-hook precmd tabTitle
 # Aliases
 #------------------
 test -f $SCRIPT_DIR/aliases.sh && source $SCRIPT_DIR/aliases.sh
-
-
