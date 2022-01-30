@@ -5,22 +5,33 @@ SCRIPT_DIR=${0:A:h}
 
 # list various configs
 alias shconfig='brew list && antigen list && hyper list && p10k help'
+
 # ssh config
 alias sshconfig="subl ~/.ssh/config"
+
 # Open .zshrc to be editor in VS Code
 alias zshcfg="code ~/.zshrc"
+
 # Re-run source command on .zshrc to update current terminal session with new settings
 alias zshupdate="source ~/.zshrc"
+
 # cd into iCloud drive folder in terminal
 alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
+
 # clear terminal
 alias c='clear'
+
 #sublime
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+
 # exa
 if [ -x "$(command -v exa)" ]; then
 	# https://the.exa.website
 	source $SCRIPT_DIR/exa-colors.sh
-	alias lx='exa --classify --header --icons --git --binary --extended --long --modified --group --all --sort=.name  --group-directories-first'
-	alias lxt='exa -la --icons --color-scale -x -F -G -T -L 3'
+	alias ls='exa --classify --header --icons --git --binary --extended --long --modified --group --all --sort=.name --group-directories-first'
+	alias l='exa --classify --header --icons --git --binary --long --modified --group --all --sort=.name --group-directories-first'
+	alias ll='ls'
+	alias la='ls'
+	alias lsa='ls'
+	alias lt='exa -la --icons --color-scale -x -F -G -T -L 3'
 fi
