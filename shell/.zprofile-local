@@ -1,6 +1,10 @@
 #------------------
 # Shell Variables
 #------------------
+
+# OpenSSH
+$ export PATH=$(brew --prefix openssh)/bin:$PATH
+
 # Specify VS Code as default editor for the React Native Simulator
 export REACT_EDITOR=code
 
