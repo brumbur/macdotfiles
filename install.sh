@@ -20,12 +20,12 @@ ARCH=$(uname -p)
 ! type brew &>/dev/null && \
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	
-if ! grep -q "export PATH_PREFIX" "$USER_HOME/.zprofile"; then
-	printf "%s\n"  >> ~/.zprofile
+if [[ -f "$USER_HOME/.zprofile" && ! grep -q "export PATH_PREFIX" "$USER_HOME/.zprofile" ]]; then
+	printf "%s\n" >> ~/.zprofile
 	printf "export PATH_PREFIX=$PATH_PREFIX" >> ~/.zprofile
-	printf "%s\n"  >> ~/.zprofile
+	printf "%s\n" >> ~/.zprofile
 	printf "export PATH=$PATH:$PATH_PREFIX" >> ~/.zprofile	
-	printf "%s\n"  >> ~/.zprofile
+	printf "%s\n" >> ~/.zprofile
 	printf 'eval $($PATH_PREFIX/bin/brew shellenv)' >> ~/.zprofile
 fi
 [[ -f $SCRIPT_DIR/homebrew/Brewfile ]] && $PATH_PREFIX/bin/brew bundle --file=$SCRIPT_DIR/homebrew/Brewfile || \
@@ -35,6 +35,7 @@ fi
 pip3 install --user pipenv
 pip3 install virtualenv
 pip3 install virtualenvwrapper
+python3 -m pip install --upgrade pip
 
 # Docker Desktop  (macos only)
 DOCKER_URL="https://desktop.docker.com/mac/main/amd64/Docker.dmg"
