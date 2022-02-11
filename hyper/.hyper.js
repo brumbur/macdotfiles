@@ -145,8 +145,9 @@ module.exports = {
         materialBox: {
             scheme: 'material',
             selectedTabFlavor: 'overline',
+            highlightSelectedTab: false,
             displayBorder: true,
-            lightEffect: true
+            lightEffect: false
         }
         // for advanced config flags please refer to https://hyper.is/#cfg
     },

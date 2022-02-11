@@ -33,6 +33,7 @@ antigen theme romkatv/powerlevel10k
 # Apply all plugin settings
 antigen apply
 
+plugins=(git)
 
 #------------------
 # Zsh hooks
