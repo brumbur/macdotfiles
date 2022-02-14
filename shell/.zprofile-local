@@ -8,17 +8,8 @@ set -o magicequalsubst && USER_HOME=~
 # OpenSSH
 export PATH=$(brew --prefix openssh)/bin:$PATH
 
-# Specify VS Code as default editor for the React Native Simulator
-export REACT_EDITOR=code
-
 # Set VS Code Insiders as default code editor
 export EDITOR=code
-
-# Android SDK
-export ANDROID_HOME=~/Library/Android/sdk
-
-# NVM directory variable
-export NVM_DIR="$HOME/.nvm"
 
 # Ruby
 export PATH="/usr/local/opt/ruby/bin:$PATH"
@@ -26,6 +17,19 @@ export PATH="/usr/local/lib/ruby/gems/2.5.0/bin:$PATH"
 
 # Java
 export JAVA_HOME="/usr/bin/java"
+
+# Python - enable completion 'pip3 completion --zsh'
+# pip zsh completion start
+function _pip_completion {
+  local words cword
+  read -Ac words
+  read -cn cword
+  reply=( $( COMP_WORDS="$words[*]" \
+             COMP_CWORD=$(( cword-1 )) \
+             PIP_AUTO_COMPLETE=1 $words[1] 2>/dev/null ))
+}
+compctl -K _pip_completion pip3
+# pip zsh completion end
 
 #-------------------
 # SSH Agent and Keys
