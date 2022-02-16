@@ -48,5 +48,5 @@ if [ -x "$(command -v exa)" ]; then
 	alias lt='exa --icons --color-scale -x -F -G -T -L 3'
 fi
 
-
+# iperf30
 alias iperf='/Applications/iperf3'
