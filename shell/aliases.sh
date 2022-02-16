@@ -47,3 +47,6 @@ if [ -x "$(command -v exa)" ]; then
 	alias lsg='exa --icons --long --git --git-ignore'
 	alias lt='exa --icons --color-scale -x -F -G -T -L 3'
 fi
+
+
+alias iperf='/Applications/iperf3'
