@@ -1,0 +1,9 @@
+[credential]
+        helper = osxkeychain
+[init]
+        defaultBranch = master
+[user]
+        name = <username>
+        email = <email>
+[pull]
+        ff = only
